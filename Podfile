@@ -6,5 +6,6 @@ target 'CodingChallange' do
   use_frameworks!
 
   # Pods for CodingChallange
+  pod 'Alamofire'
 
 end

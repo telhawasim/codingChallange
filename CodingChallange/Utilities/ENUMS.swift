@@ -16,3 +16,19 @@ enum StoryboardEnum: String {
         return UIStoryboard(name: self.rawValue, bundle: nil)
     }
 }
+
+//MARK: - MESSGAGES -
+enum Messages: String {
+    case apiErrorMessage = "There is something wrong."
+    
+}
+
+//MARK: - PARAMETERS
+enum Parameters: String {
+    case page = "page"
+}
+
+//MARK: - DATE FORMAT ENUM -
+enum DateFormat: String {
+    case yyyyMMdd = "yyyy-MM-dd"
+}
