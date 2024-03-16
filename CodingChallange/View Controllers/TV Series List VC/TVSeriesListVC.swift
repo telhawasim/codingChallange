@@ -62,16 +62,16 @@ extension TVSeriesListVC {
         switch index {
         case 0:
             self.lblTitle.text = Constants.airingToday
-            self.getTVSerialList(endPoint: ApiUrls.AIRING_TODAY, page: self.currentPage)
+            self.getTVSerialList(endPoint: ApiUrls.AIRING_TODAY)
         case 1:
             self.lblTitle.text = Constants.onTheAir
-            self.getTVSerialList(endPoint: ApiUrls.ON_THE_AIR, page: self.currentPage)
+            self.getTVSerialList(endPoint: ApiUrls.ON_THE_AIR)
         case 2:
             self.lblTitle.text = Constants.popular
-            self.getTVSerialList(endPoint: ApiUrls.POPULAR, page: self.currentPage)
+            self.getTVSerialList(endPoint: ApiUrls.POPULAR)
         case 3:
             self.lblTitle.text = Constants.topRated
-            self.getTVSerialList(endPoint: ApiUrls.TOP_RATED, page: self.currentPage)
+            self.getTVSerialList(endPoint: ApiUrls.TOP_RATED)
         default:
             return
         }
@@ -115,7 +115,7 @@ extension TVSeriesListVC: UITableViewDelegate, UITableViewDataSource {
 extension TVSeriesListVC {
     
     //MARK: - GET TV SERIAL LIST -
-    func getTVSerialList(endPoint: String, page: Int) {
+    func getTVSerialList(endPoint: String) {
         DispatchQueue.main.async {
             Loader.shared.showLoader(loader: self.loader, currentView: self.view)
             NetworkManager.shared.request(endPoint: endPoint, method: .get, parameters: self.getParams()) { (data: TVSeriesListResponse?) in
